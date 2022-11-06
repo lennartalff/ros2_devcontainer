@@ -1,0 +1,44 @@
+services:
+  nvidia:
+    extends:
+      service: dev
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+  dev:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    stdin_open: true
+    tty: true
+    working_dir: /home/ros-user/uuv/ros2
+    devices:
+      - "/dev/dri:/dev/dri"
+    volumes:
+      - type: bind
+        source: ${HOME}/uuv
+        target: /home/ros-user/uuv
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+      - type: bind
+        source: /var/run/dbus
+        target: /var/run/dbus
+      - type: bind
+        source: /var/run/avahi-daemon/socket
+        target: /var/run/avahi-daemon/socket
+      - "ros2_zsh_history:/zsh_history"
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - SHELL=/usr/bin/zsh
+      - ROS_WORKSPACE=/home/ros-user/uuv/ros2
+
+volumes:
+  ros2_zsh_history:
