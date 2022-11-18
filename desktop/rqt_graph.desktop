@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=rqt_graph
+Exec=docker exec -dit ros2 zsh -c 'source $HOME/.zshrc && rqt_graph'
+Terminal=true
