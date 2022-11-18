@@ -1,5 +1,6 @@
 services:
   nvidia:
+    container_name: ros2
     extends:
       service: dev
     deploy:
@@ -10,6 +11,7 @@ services:
               count: all
               capabilities: [gpu]
   dev:
+    container_name: ros2
     network_mode: host
     build:
       context: .
