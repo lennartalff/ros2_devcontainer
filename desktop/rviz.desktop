@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=rviz
+Exec=docker exec -dit ros2 zsh -c 'source $HOME/.zshrc && rviz2'
+Terminal=false
