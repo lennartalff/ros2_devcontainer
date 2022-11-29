@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=tf_tree
+Exec=docker exec -dit ros2 zsh -c 'source $HOME/.zshrc && ros2 run rqt_tf_tree rqt_tf_tree'
+Terminal=false

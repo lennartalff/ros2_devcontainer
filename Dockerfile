@@ -27,6 +27,7 @@ RUN apt-get update \
     vim \
     wget \
     xmlstarlet \
+    ros-${ROS_DISTR}-rqt-tf-tree \
     && pip3 install yapf \
     rope \
     flake8 \

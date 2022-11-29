@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=gazebo
+Exec=docker exec -dit ros2 zsh -c 'source $HOME/.zshrc && ros2 launch hippo_sim start_gazebo.launch.py'
+Terminal=true
