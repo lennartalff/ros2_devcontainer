@@ -28,6 +28,7 @@ RUN apt-get update \
     wget \
     xmlstarlet \
     ros-${ROS_DISTR}-rqt-tf-tree \
+    ros-${ROS_DISTR}-apriltag \
     && pip3 install yapf \
     rope \
     flake8 \
