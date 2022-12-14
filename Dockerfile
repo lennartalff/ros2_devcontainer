@@ -57,6 +57,7 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
     && mkdir -p "$HOME/.zsh" \
     && git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure" \
     && echo "source /opt/ros/$ROS_DISTR/setup.zsh" >> /home/$USERNAME/.zshrc \
+    && echo "source $HOME/uuv/ros2_underlay/install/setup.zsh" >> /home/$USERNAME/.zshrc \
     && echo 'source $HOME/uuv/ros2/install/local_setup.zsh' >> /home/$USERNAME/.zshrc \
     && echo 'eval "$(register-python-argcomplete3 ros2)"' >> /home/$USERNAME/.zshrc \
     && echo 'eval "$(register-python-argcomplete3 colcon)"' >> /home/$USERNAME/.zshrc
