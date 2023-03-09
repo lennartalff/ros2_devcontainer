@@ -8,6 +8,8 @@
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/home/ros-user/uuv/ros2",
     "remoteUser": "ros-user",
+    "customizations": {
+        "vscode": {
     "settings": {
         "terminal.integrated.profiles.linux": {
             "zsh": {
@@ -38,7 +40,7 @@
         // use google style per default
         "C_Cpp.clang_format_fallbackStyle": "Google",
         // never fall back to tag parser
-        "C_Cpp.intelliSenseEngineFallback": "Disabled",
+                "C_Cpp.intelliSenseEngineFallback": "disabled",
         "C_Cpp.codeAnalysis.clangTidy.enabled": true,
         // use compile_commands.json specified in c_cpp_properties.json
         "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true
@@ -61,4 +63,6 @@
         // generate doxygen comments
 		"cschlosser.doxdocgen"
 	]
+        }
+    }
 }
