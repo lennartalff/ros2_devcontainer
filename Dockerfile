@@ -2,10 +2,10 @@ FROM osrf/ros:humble-desktop-full
 ARG ROS_DISTR=humble
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV NVIDIA_VISIBLE_DEVICES \
-    ${NVIDIA_VISIBLE_DEVICES:-all}
-ENV NVIDIA_DRIVER_CAPABILITIES \
-    ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
+# ENV NVIDIA_VISIBLE_DEVICES \
+#     ${NVIDIA_VISIBLE_DEVICES:-all}
+# ENV NVIDIA_DRIVER_CAPABILITIES \
+#     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 ARG USERNAME=ros-user
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
@@ -60,7 +60,9 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
     && echo "source $HOME/uuv/ros2_underlay/install/setup.zsh" >> /home/$USERNAME/.zshrc \
     && echo 'source $HOME/uuv/ros2/install/local_setup.zsh' >> /home/$USERNAME/.zshrc \
     && echo 'eval "$(register-python-argcomplete3 ros2)"' >> /home/$USERNAME/.zshrc \
-    && echo 'eval "$(register-python-argcomplete3 colcon)"' >> /home/$USERNAME/.zshrc
+    && echo 'eval "$(register-python-argcomplete3 colcon)"' >> /home/$USERNAME/.zshrc \
+    && echo "alias build_ros=\"env -i HOME=\$HOME USER=\$USER TERM=xterm-256color bash -l -c 'source \$HOME/uuv/ros2_underlay/install/setup.bash && cd \$HOME/uuv/ros2 && colcon build --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'\"" >> ~/.zshrc \
+    && echo "alias build_underlay=\"env -i HOME=\$HOME USER=\$USER TERM=xterm-256color bash -l -c 'source /opt/ros/humble/setup.bash && cd \$HOME/uuv/ros2_underlay && colcon build'\"" >> ~/.zshrc
 USER root
 RUN mkdir /zsh_history \
     && touch /zsh_history/.zsh_history \

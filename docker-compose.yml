@@ -3,6 +3,9 @@ services:
     container_name: ros2
     extends:
       service: dev
+    environment:
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - NVIDIA_VISIBLE_DEVICES=all
     deploy:
       resources:
         reservations:
