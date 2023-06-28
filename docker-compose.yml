@@ -44,6 +44,7 @@ services:
       - QT_X11_NO_MITSHM=1
       - SHELL=/usr/bin/zsh
       - ROS_WORKSPACE=/home/ros-user/uuv/ros2
+      - ROS_DOMAIN_ID=42
 
 volumes:
   ros2_zsh_history:
