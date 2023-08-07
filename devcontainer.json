@@ -10,59 +10,59 @@
     "remoteUser": "ros-user",
     "customizations": {
         "vscode": {
-    "settings": {
-        "terminal.integrated.profiles.linux": {
-            "zsh": {
-                "path": "zsh",
-                "args": [
-                    "-l",
-                    "-i"
-                ]
-            }
-        },
-        "python.languageServer": "Pylance",
-        "python.formatting.provider": "yapf",
-        "python.formatting.yapfArgs": [
-            "--style={based_on_style: pep8, column_limit: 80}"
-        ],
-        "python.linting.enabled": true,
-        "python.linting.pylintEnabled": false,
-        "python.linting.flake8Enabled": true,
-        "python.linting.flake8Args": [
-            "--max-line-length=80"
-        ],
-        "python.analysis.completeFunctionParens": true,
-        "clang-format.language.cpp.enable": true,
-        "autoDocstring.docstringFormat": "google",
-        "files.insertFinalNewline": true,
-        "yaml.format.enable": true,
-        "yaml.validate": true,
-        // use google style per default
-        "C_Cpp.clang_format_fallbackStyle": "Google",
-        // never fall back to tag parser
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "zsh",
+                        "args": [
+                            "-l",
+                            "-i"
+                        ]
+                    }
+                },
+                "python.languageServer": "Pylance",
+                "python.formatting.provider": "yapf",
+                "python.formatting.yapfArgs": [
+                    "--style={based_on_style: pep8, column_limit: 80}"
+                ],
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": false,
+                "python.linting.flake8Enabled": true,
+                "python.linting.flake8Args": [
+                    "--max-line-length=80"
+                ],
+                "python.analysis.completeFunctionParens": true,
+                "clang-format.language.cpp.enable": true,
+                "autoDocstring.docstringFormat": "google",
+                "files.insertFinalNewline": true,
+                "yaml.format.enable": true,
+                "yaml.validate": true,
+                // use google style per default
+                "C_Cpp.clang_format_fallbackStyle": "Google",
+                // never fall back to tag parser
                 "C_Cpp.intelliSenseEngineFallback": "disabled",
-        "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-        // use compile_commands.json specified in c_cpp_properties.json
-        "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true
-    },
-    "extensions": [
-        // generate docstring snippets for python
-		"njpwerner.autodocstring",
-        // python language support
-		"ms-python.python",
-        // cpp language support
-		"ms-vscode.cpptools",
-        // yaml language support
-		"redhat.vscode-yaml",
-        // ROS extension
-		"ms-iot.vscode-ros",
-        // xml language support
-		"redhat.vscode-xml",
-        // syntax support for cmake files
-		"twxs.cmake",
-        // generate doxygen comments
-		"cschlosser.doxdocgen"
-	]
+                "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+                // use compile_commands.json specified in c_cpp_properties.json
+                "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true
+            },
+            "extensions": [
+                // generate docstring snippets for python
+                "njpwerner.autodocstring",
+                // python language support
+                "ms-python.python",
+                // cpp language support
+                "ms-vscode.cpptools",
+                // yaml language support
+                "redhat.vscode-yaml",
+                // ROS extension
+                "ms-iot.vscode-ros",
+                // xml language support
+                "redhat.vscode-xml",
+                // syntax support for cmake files
+                "twxs.cmake",
+                // generate doxygen comments
+                "cschlosser.doxdocgen"
+            ]
         }
     }
 }
