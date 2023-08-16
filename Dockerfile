@@ -1,5 +1,5 @@
-FROM osrf/ros:humble-desktop-full
-ARG ROS_DISTR=humble
+FROM osrf/ros:iron-desktop-full
+ARG ROS_DISTR=iron
 
 ENV DEBIAN_FRONTEND=noninteractive
 # ENV NVIDIA_VISIBLE_DEVICES \
@@ -14,6 +14,17 @@ ENV ROS_DISTR=$ROS_DISTR
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     && apt-get install -y \
+    # plotjuggler dependencies start
+    qtbase5-dev \
+    libqt5svg5-dev \
+    libqt5websockets5-dev \
+    libqt5opengl5-dev \
+    libqt5x11extras5-dev \
+    binutils \
+    libzmq3-dev \
+    lz4 \
+    libzstd-dev \
+    # plotjuggler deps end
     libgl1-mesa-dri \
     libgl1-mesa-glx \
     mesa-utils \
